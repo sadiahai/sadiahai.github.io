@@ -19,3 +19,17 @@ function openNav() {
     document.body.style.backgroundColor = "white";
   }
   
+window.addEventListener('DOMContentLoaded', function() {
+    adjustIntroHeight();
+});
+
+window.addEventListener('resize', function() {
+    adjustIntroHeight();
+});
+
+function adjustIntroHeight() {
+    var introSection = document.getElementById('intro');
+    var introParagraph = document.getElementById('intro-paragraph');
+    var paragraphHeight = introParagraph.offsetHeight;
+    introSection.style.height = paragraphHeight + 'px';
+}

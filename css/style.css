@@ -18,6 +18,7 @@
 
 p {
     font-size: 35px;
+    margin: 0;
 }
 
 .social {
@@ -41,10 +42,6 @@ p {
 }
 
 
-.angellist {
-    color: grey;
-}
-
 .icon-btn:hover {
     transform: scale(1.10);
     color: #FFFFFF;
@@ -57,6 +54,7 @@ body {
     color: #574f49;
     line-height: 29px;
     font-size: 18px;
+    overflow-x: hidden;
 }
 
 a {
@@ -182,7 +180,7 @@ li.logo span {
 }
 
 h3 {
-    font-weight:normal;
+    font-weight: normal;
     margin-bottom: 60px;
     margin-top: 0;
     padding: 30px 40px;
@@ -194,16 +192,30 @@ h3 {
     padding-bottom: 60px;
     padding-top: 0;
     position: relative;
+    overflow-x: hidden;
+    width: 90vw;
 }
 
 .full-height {
-    height: 100vh;
+    height: 125vh;
+}
+
+.container {
+    width: 95%;
+}
+
+#intro {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+
 }
 
 
 #intro.section {
-    background: #ffffff repeat;
+    background: #130404cd repeat;
     position: relative;
+    padding-bottom: 50px;
 }
 
 #intro.section .container {
@@ -212,6 +224,8 @@ h3 {
     left: 0;
     position: absolute;
     top: 0;
+    bottom: 0;
+    padding-bottom: 50px;
 }
 
 #intro.section .container *:not(span) {
@@ -224,7 +238,7 @@ h3 {
     border-bottom: 5px solid #24305e;
 }
 
-#intro.section .teal {
+#intro.section .orange {
     padding: 0 10px;
 }
 
@@ -239,6 +253,19 @@ h3 {
 
 .waves-effect.waves-blue .waves-ripple {
     background-color: rgba(211, 235, 255, 0.2);
+}
+.col {
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.s12 {
+    width: 100%;
 }
 
 .card {
@@ -255,7 +282,7 @@ h3 {
 .card li a {
     margin-right: 0;
     color: #333;
-    border-bottom: 2px solid #ff9408;
+    border-bottom: 2px solid #cd7400;
 }
 
 .card li a:hover {
@@ -265,6 +292,7 @@ h3 {
 
 .card .card-content {
     padding-bottom: 30px;
+    line-height: 1.5;
 }
 
 .card .card-content p {
@@ -298,7 +326,7 @@ h3 {
 }
 
 .scrollspy {
-    background-color: #fef7ed;
+    background-color: #030302e6;
 }
 
 .page-title {
@@ -347,7 +375,7 @@ a.hoverline {
 
 
 a.hoverline:hover {
-    border-bottom: 3px solid #ef8d04 !important;
+    border-bottom: 3px solid #cd7400 !important;
 }
 
 #skills .card.large {
@@ -376,10 +404,13 @@ a.hoverline:hover {
 }
 
 #experience .card-content .row {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ffffff;
     padding-bottom: 10px;
 }
-
+#education .card-content .row {
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 10px;
+}
 .card.large .card-image {
     height: 230px;
 }
@@ -402,9 +433,6 @@ a.hoverline:hover {
     position: relative;
 }
 
-#experience .col.s12.m2 {
-    text-align: center;
-}
 
 .fa-external-link:before {
     left: 3px;
@@ -417,18 +445,18 @@ small {
 }
 
 .grey-text {
-    color: #4f4e4e !important;
+    color: #f1f0ecb4 !important;
 }
 
 
 
 .black-text {
-    color: #020202 !important;
+    color: #000000 !important;
 }
 
 
 .orange {
-    background-color: #ec8600;
+    background-color: #cd7400;
 }
 
 @media (min-width: 1200px) {
@@ -437,21 +465,13 @@ small {
     }
 }
 
-@media (max-width: 1360px) {
-    .card ul li {
-        font-size: 14px;
-        line-height: 200%;
-        margin-left: 20px;
-    }
-}
-
-@media (max-width: 1160px) {
+@media (min-width: 600px) and (max-width: 1159px) {
     .card ul li {
         line-height: 150%;
     }
 }
 
-@media (max-width: 992px) {
+@media (min-width: 600px) and (max-width: 991px) {
     main {
         padding-left: 0px;
         padding-top: 64px;
