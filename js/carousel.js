@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     prevButton.addEventListener("click", goToPrev);
     nextButton.addEventListener("click", goToNext);
 
-    // Keyboard accessibility
+
     document.addEventListener("keydown", function (event) {
         if (event.key === "ArrowLeft") {
             goToPrev();

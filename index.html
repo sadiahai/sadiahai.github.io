@@ -5,6 +5,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
@@ -16,44 +19,45 @@
 <body>
 
   <!-- Side Navigation Implementation -->
+  <!-- Resource: https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp-->
   <nav class="hide-on-small-only">
     <ul class="side-nav fixed section table-of-contents">
 
       <li class="logo">
-        <a aria-label="Move back to the top of the page." href="#intro" class="brand-logo">
+        <a id="logo-container" aria-label="Move back to the top of the page." href="#intro" class="brand-logo">
           <img src="images/Haidari_Sadia_Headshot.PNG" class="profile" alt="profile picture">
         </a>
       </li>
 
       <li class="bold">
-        <a aria-label="Move to the Education section" href="#education" class="waves-effect waves-dark black-text"><i
+        <a aria-label="Move to the Education section" href="#education" class="black-text"><i
             class="mdi-social-school small"></i><span>Education</span></a>
       </li>
 
       <li class="bold">
-        <a aria-label="Move to the Experience section" href="#experience" class="waves-effect waves-dark black-text"><i
+        <a aria-label="Move to the Experience section" href="#experience" class=" black-text"><i
             class="mdi-action-trending-up small"></i><span>Experience</span></a>
       </li>
 
       <li class="bold">
-        <a aria-label="Move ot the Projects section" href="#projects" class="waves-effect waves-dark black-text"><i
+        <a aria-label="Move ot the Projects section" href="#projects" class=" black-text"><i
             class="mdi-av-my-library-books small"></i><span>Projects</span></a>
       </li>
 
       <li class="bold">
-        <a aria-label="Move to the Contact section" href="#contact" class="waves-effect waves-dark black-text"><i
+        <a aria-label="Move to the Contact section" href="#contact" class="black-text"><i
             class="mdi-content-mail small"></i><span>Contact</span></a>
       </li>
 
       <li class="bold">
         <a aria-label="Open for the LinkedIn profile in a new tab" href="linkedin.com/in/sadia-haidari-7628b9202"
-          target="_blank" class="waves-effect waves-dark black-text"><i
+          target="_blank" class="black-text"><i
             class="mdi-file-folder-open small"></i><span>LinkedIn</span></a>
       </li>
 
       <li class="bold">
         <a aria-label="Open for the GitHub profile in a new tab" href="https://github.com/sadiahai" target="_blank"
-          class="waves-effect waves-dark black-text"><i class="mdi-file-folder-open small"></i><span>GitHub</span></a>
+          class="black-text"><i class="mdi-file-folder-open small"></i><span>GitHub</span></a>
       </li>
     </ul>
   </nav>
@@ -64,42 +68,41 @@
         class="mdi-navigation-menu"></i></a>
     <div class="name-title">
       <a id="name" aria-label="Navigate to the beginning of the page" href="#" class="black-text">Sadia Haidari</a>
-      < </div>
+    </div>
   </nav>
 
   <!-- Same thing as hide-on-small -->
   <nav class="hide-on-large only">
     <ul id="slide-out" class="side-nav">
-
       <li class="bold">
-        <a aria-label="Move to the Education section" href="#education" class="waves-effect waves-dark black-text"><i
+        <a aria-label="Move to the Education section" href="#education" class="black-text"><i
             class="mdi-social-school small"></i><span>Education</span></a>
       </li>
 
       <li class="bold">
-        <a aria-label="Move to the Experience section" href="#experience" class="waves-effect waves-dark black-text"><i
+        <a aria-label="Move to the Experience section" href="#experience" class="black-text"><i
             class="mdi-action-trending-up small"></i><span>Experience</span></a>
       </li>
 
       <li class="bold">
-        <a aria-label="Move ot the Projects section" href="#projects" class="waves-effect waves-dark black-text"><i
+        <a aria-label="Move ot the Projects section" href="#projects" class="black-text"><i
             class="mdi-av-my-library-books small"></i><span>Projects</span></a>
       </li>
 
       <li class="bold">
-        <a aria-label="Move to the Contact section" href="#contact" class="waves-effect waves-dark black-text"><i
+        <a aria-label="Move to the Contact section" href="#contact" class=" black-text"><i
             class="mdi-content-mail small"></i><span>Contact</span></a>
       </li>
 
       <li class="bold">
         <a aria-label="Open for the LinkedIn profile in a new tab" href="linkedin.com/in/sadia-haidari-7628b9202"
-          target="_blank" class="waves-effect waves-dark black-text"><i
+          target="_blank" class="black-text"><i
             class="mdi-file-folder-open small"></i><span>LinkedIn</span></a>
       </li>
 
       <li class="bold">
         <a aria-label="Open for the GitHub profile in a new tab" href="https://github.com/sadiahai" target="_blank"
-          class="waves-effect waves-dark black-text"><i class="mdi-file-folder-open small"></i><span>GitHub</span></a>
+          class="black-text"><i class="mdi-file-folder-open small"></i><span>GitHub</span></a>
       </li>
     </ul>
   </nav>
@@ -109,8 +112,8 @@
     <section id="intro" class="section scrollspy full-height">
       <div class="overlay"></div>
       <div class="container">
-        <div>
-          <div class="section-padding" style="margin-left: 10%; margin-top: 50px;">
+        <div class="col-md-9">
+          <div class="content section-padding valign" style="margin-left: 10%; margin-top: 50px;">
             <div>
               <h2>Hi, I'm <span class="orange">Sadia Haidari.</span></h2> <br> <br>
               <h3 id="changingText">I am <span id="changingSpan"></span></h3>
@@ -191,15 +194,15 @@
       <h3 class="page-title white-text orange">Education</h3>
       <div class="container">
         <div class="row">
-          <div class="col s12">
+          <div class=" s12 m6 l6" style="width: 75vw; justify-content: center; align-items: center;">
             <div class="card">
               <div class="card-content">
                 <span class="card-title">The University of Michigan</span>
-                <p>Ann Arbor, MI</p>
-                <p>
-                  <em>Expected 2026</em><br>
+                <p class="orange-text" style="color: #cd7400">Ann Arbor, MI</p>
+                <p style="font-size: 20px; font-weight:bold">
+                  <i>Expected 2026</i><br>
                   <strong>Degree: </strong>Bachelor's of Science in Computer Science, minor in UX Design<br>
-                  <strong>CGPA: </strong>3.50/4.0
+                  <strong>GPA: </strong>3.50/4.0
                 </p>
                 <p><strong>Relevant Coursework:</strong></p>
                 <ul>
@@ -220,21 +223,17 @@
     <section id="experience" class="section scrollspy">
       <h3 class="page-title white-text orange">Experience</h3>
       <div class="container">
-
         <div class="card">
           <div class="card-content">
             <div class="row">
-              <div>
-                <a href="https://www.thinkneuro.org/" target="_blank"><img alt="ThinkNeuro Logo"
-                    src="images/ThinkNeuro.png" class="responsive-img center-block" /></a>
+              <div class="col s12 m2">
               </div>
-              <div>
+              <div class="col s12 m10">
                 <p>
                   <span class="card-title">Think Neuro</a></span>
                 </p>
               </div>
             </div>
-            <div class="role text-darken-2">Software Developer</div>
             <ul>
               <li>
                 Create a basic wireframe for the frontend interface of the Digital Opioid Intervention Platform for
@@ -255,230 +254,122 @@
         <div class="card">
           <div class="card-content">
             <div class="row">
-              <div>
-                <a href="https://michiganecodata.org/" target="_blank"><img alt="Michigan Eco Data logo"
-                    src="images/EcoData.png" class="responsive-img center-block" /></a>
+              <div class="col s12 m2">
               </div>
               <div>
                 <p>
                   <span class="card-title">Michigan Eco Data</a></span>
                 </p>
               </div>
+              <ul>
+                <li>
+                  Utilize Kareo, Python, ArcGIS, C++, Git, and Excel to create a user-friendly method of generating
+                  stats
+                  & data visualizations of client demographic and health assessment data for the Women's Center of
+                  Southeastern Michigan.
+                </li>
+                <li>
+                  Create a Client Coverage map. Analyze pre/post counseling depression (PHQ-9) and anxiety (GAD-7)
+                  scores to quantify therapeutic intervention.
+                </li>
+              </ul>
             </div>
-            <div class="role text-darken-2">Data Analytics Member</div>
-            <ul>
-              <li>
-                Utilize Kareo, Python, ArcGIS, C++, Git, and Excel to create a user-friendly method of generating stats
-                & data visualizations of client demographic and health assessment data for the Women's Center of
-                Southeastern Michigan.
-              </li>
-              <li>
-                Create a Client Coverage map. Analyze pre/post counseling depression (PHQ-9) and anxiety (GAD-7)
-                scores to quantify therapeutic intervention.
-              </li>
-            </ul>
-          </div>
-          <div class="card-action">
-            <span>August 2023 - PRESENT | Ann Arbor, MI, USA</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div>
-                <a href="https://www.feinberg.northwestern.edu/" target="_blank"><img alt="Northwestern Logo"
-                    src="images/Northwestern.jpg" class="responsive-img center-block" /></a>
-              </div>
-              <div>
-                <p>
-                  <span class="card-title">Northwestern University</span>
-                </p>
-              </div>
+            <div class="card-action">
+              <span>August 2023 - PRESENT | Ann Arbor, MI, USA</span>
             </div>
-            <div class="role text-darken-2">Research and Marketing Intern</div>
-            <ul>
-              <li>
-                Serve in a youth media consulting role on PrEP4Teens, a citywide social marketing campaign aimed at
-                increasing HIV prevention awareness among adolescents.
-              </li>
-              <li>
-                Drafted a campaign brand for the several murals across the
-                Chicagoland area, the website in both Spanish and English, the discord server, and social media
-                platforms.
-              </li>
-              <li>
-                Spoke at a webinar for the Global PrEP Learning Network (funded by PEPFAR and USAID) to over 180
-                people from Zimbabwe, Uganda, Lesotho, South Africa, and the US about the PrEP4Teens project and the
-                unique role that youth contributions play in community mobilization surrounding the HIV epidemic.
-              </li>
-            </ul>
           </div>
-          <div class="card-action">
-            <span>June 2021 - PRESENT | Chicago, IL, USA</span>
-          </div>
-        </div>
 
-      </div>
+          <div class="card">
+            <div class="card-content">
+              <div class="row">
+                <div class="col s12 m2">
+                </div>
+                <div>
+                  <p>
+                    <span class="card-title">Northwestern University</span>
+                  </p>
+                </div>
+              </div>
+              <ul>
+                <li>
+                  Serve in a youth media consulting role on PrEP4Teens, a citywide social marketing campaign aimed at
+                  increasing HIV prevention awareness among adolescents.
+                </li>
+                <li>
+                  Drafted a campaign brand for the several murals across the
+                  Chicagoland area, the website in both Spanish and English, the discord server, and social media
+                  platforms.
+                </li>
+                <li>
+                  Spoke at a webinar for the Global PrEP Learning Network (funded by PEPFAR and USAID) to over 180
+                  people from Zimbabwe, Uganda, Lesotho, South Africa, and the US about the PrEP4Teens project and the
+                  unique role that youth contributions play in community mobilization surrounding the HIV epidemic.
+                </li>
+              </ul>
+            </div>
+            <div class="card-action">
+              <span>June 2021 - PRESENT | Chicago, IL, USA</span>
+            </div>
+          </div>
+
+        </div>
     </section>
 
     <section id="projects" class="section scrollspy">
       <h3 class="page-title white-text orange">Projects</h3>
-      <div class="container">
-        <div class="row">
-
-          <div>
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="a series of words close to the spelling of apple" src="images/Strings.png"
-                  style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator white-text hoverline">Protein Matching Program<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p> A program to compare protein strings and evaluate their closest match.</p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><strong>Tools:</strong> Python, VS Code</li>
-                  <li>Compares 30 different markers to a singular protein amino
-                    acid sequence in order to identify which alignment of the marker relative to the protein produces
-                    the least amount of errors and the most matches</li>
-                  <li>Utilizes process similar to search matching programs</li>
-                  <li>Applies bioinformatics to evaluate how computer science can be used to identify protein
-                    properties, such as its 3D structure </li>
-                </ul>
-              </div>
+      <div class="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item">
+            <img src="images/PenguinDataSci.png" alt="6 different penguin species">
+            <div class="carousel-text">
+              <h2 style = "color: #f5f5f5">Penguin Statistics</h2>
             </div>
           </div>
-
-          <div>
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Different Penguin Species in a line" src="images/PenguinDataSci.png"
-                  style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator white-text hoverline">Penguin Biodiversity Analytics<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  A data scraping program to narrow down demographic features and compare them to general trends.</p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><strong>Tools:</strong> Python, VS Code, NumPy, Pandas</li>
-                  <li>Accessed a public penguin data file of 2400 observations about three penguin populations in
-                    Antarctica to apply data science to monitoring biodiversity.</li>
-                  <li> Constructed a Python program that takes user input of species and characteristics of interest to
-                    pull information about that specific population and give average, minimum, and maximum data values
-                  </li>
-
-                </ul>
-              </div>
+          <div class="carousel-item">
+            <img src="images/crayons.bmp" alt="Crayons stacked on one another">
+            <div class="carousel-text">
+              <h2 style = "color: #f5f5f5">Image Filters</h2>
             </div>
           </div>
-
-          <div>
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Image of Caesarian Cipher Key" src="images/Ciphers.png" style="height: 100%; width: 100%"
-                  class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator white-text hoverline">Encryption Decryption Ciphers<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  A program exploring encryption and decryption with user generated keys.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title white-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><strong>Tools:</strong> C++, VS Code</li>
-                  <li>Can apply numeric key values to manipulate alphabetical positions within
-                    texts, as well as fundamental skills of cryptography.</li>
-                  <li>Uses concept of encryption and decryption to three different cipher keys in order to conceal
-                    messages</li>
-
-
-                </ul>
-              </div>
+          <div class="carousel-item">
+            <img src="images/Ciphers.png" alt="Demonstration of Caesar Cipher Key">
+            <div class="carousel-text">
+              <h2 style = "color: #f5f5f5">Encryption/Decryption Ciphers</h2>
             </div>
           </div>
-
-          <div>
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="A person on the phone in front of the Instagram logo" src="images/Instagram.jpg"
-                  style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator white-text hoverline">Instagram Password Cracker<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  A Python program that accesses the Instagram database to guess a user's password.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title white-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><strong>Tools:</strong> Python, Splinter, VS Code</li>
-                  <li>Assesses different password combinations based on the parameters, handling errors as needed.</li>
-                  <li>Controls the web browser and takes in command-line arguments and uses standard input processing
-                    for interactive script
-                    execution.</li>
-                </ul>
-              </div>
+          <div class="carousel-item">
+            <img src="images/Instagram.jpg" alt="A person using a phone in front of the Instagram logo">
+            <div class="carousel-text">
+              <h2 style = "color: #f5f5f5">Instagram Password Cracker</h2>
             </div>
           </div>
-
-          <div>
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="A box of crayons" src="images/crayons.bmp" style="height: 100%; width: 100%"
-                  class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator white-text hoverline">Image Filters<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Manipulates a given image to apply different filters on it.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title brown-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><strong>Tools: </strong>Python, VS Code</li>
-                  <li>Takes in a user provided image and presents a menu of seven different options for how to
-                    manipulate the image.</li>
-                  <li>Applies knowledge of grids and pixels to shrink images, change pixel colors, and much more all
-                    while maintaining the look fo the original image.</li>
-                </ul>
-              </div>
+          <div class="carousel-item">
+            <img src="images/Piazza.png" alt="Piazza logo">
+            <div class="carousel-text">
+              <h2 style = "color: #f5f5f5">Piazza Post Classifier</h2>
             </div>
           </div>
         </div>
+
+
+        <button class="carousel-control prev" aria-label="Previous Slide">&lt;</button>
+        <button class="carousel-control next" aria-label="Next Slide">&gt;</button>
       </div>
+      <script type="text/javascript" src="carousel.js"></script>
     </section>
+
 
     <section id="contact" class="section scrollspy full-height">
       <h3 class="page-title white-text orange">Contact Me</h3>
       <div class="container">
-        <p>
+        <p style = "color: #f5f5f5; line-height: 1.5;">
           <strong>Phone Number: </strong> +1 (773)849-8006 <br>
           <strong>Email Address: </strong> sadiahai@umich.edu <br>
           <strong>Github: </strong>
-          <a aria-label="Sadia on Github" href="http://github.com/sadiahai"> http://github.com/sadiahai </a>
+          <a aria-label="Sadia on Github" href="http://github.com/sadiahai" style= "color: #cd7400;"> http://github.com/sadiahai </a>
           <br>
           <strong>LinkedIn: </strong>
-          <a aria-label="Sadia on LinkedIn" href="linkedin.com/in/sadia-haidari-7628b9202">
+          <a aria-label="Sadia on LinkedIn" href="linkedin.com/in/sadia-haidari-7628b9202" style= "color: #cd7400;">
             linkedin.com/in/sadia-haidari-7628b9202 </a>
           <br>
         </p>

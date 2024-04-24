@@ -21,6 +21,21 @@ p {
     margin: 0;
 }
 
+display {
+    margin-top: 0.5rem;
+}
+
+display2 {
+    display: inline-block;
+    font-weight: 500;
+    margin-left: 0;
+}
+
+display3 {
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+
 .social {
     margin: 0 auto;
     width: auto;
@@ -33,7 +48,6 @@ p {
     height: 50px;
     border: 0;
     color: #FFFFFF;
-    cursor: pointer;
     font-size: 30px;
     line-height: 70px;
     border-radius: 45px;
@@ -49,12 +63,13 @@ p {
 
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Cormorant', sans-serif;
     background-color: #faf9f8;
     color: #574f49;
     line-height: 29px;
     font-size: 18px;
     overflow-x: hidden;
+
 }
 
 a {
@@ -97,23 +112,8 @@ nav i {
 }
 
 main {
-    background: url(../../assets/img/bg.png) repeat;
+
     padding-left: 190px;
-}
-
-dl {
-    margin-top: 0.5rem;
-}
-
-dd {
-    display: inline-block;
-    font-weight: 500;
-    margin-left: 0;
-}
-
-dt {
-    display: inline-block;
-    margin-left: 0.5rem;
 }
 
 ul.side-nav {
@@ -160,7 +160,12 @@ ul.table-of-contents li:not(.logo) a:hover {
 
 ul.side-nav.fixed.table-of-contents li:not(.logo) a span,
 ul#slide-out li:not(.logo) a span {
-    color: #333 !important;
+    color: #333;
+}
+
+.orange-text {
+    color: #cd7400;
+    font-family: Cormorant;
 }
 
 li.logo span {
@@ -180,6 +185,7 @@ li.logo span {
 }
 
 h3 {
+    font-family: Montserrat;
     font-weight: normal;
     margin-bottom: 60px;
     margin-top: 0;
@@ -226,6 +232,7 @@ h3 {
     top: 0;
     bottom: 0;
     padding-bottom: 50px;
+    width:70vw;
 }
 
 #intro.section .container *:not(span) {
@@ -251,9 +258,7 @@ h3 {
     width: 100%;
 }
 
-.waves-effect.waves-blue .waves-ripple {
-    background-color: rgba(211, 235, 255, 0.2);
-}
+
 .col {
     box-sizing: border-box;
     display: block;
@@ -270,6 +275,7 @@ h3 {
 
 .card {
     margin-bottom: 60px;
+    border-radius: 20px;
 }
 
 .card .role {
@@ -354,7 +360,10 @@ h3 {
 }
 
 .card .card-title {
-    font-size: 50px;
+    font-size: 30px;
+    background-color: #100f0ff0;
+    font-family: Montserrat;
+
 }
 
 .card .card-content .card-title {
@@ -366,16 +375,15 @@ h3 {
 }
 
 a.hoverline {
-    border-bottom: 3px solid transparent !important;
+    border-bottom: 3px solid transparent;
     padding: 3px 3px 0 3px;
     transition: 0.25s all;
-    -moz-transition: 0.25s all;
     -webkit-transition: 0.25s all;
 }
 
 
 a.hoverline:hover {
-    border-bottom: 3px solid #cd7400 !important;
+    border-bottom: 3px solid #cd7400;
 }
 
 #skills .card.large {
@@ -407,10 +415,12 @@ a.hoverline:hover {
     border-bottom: 1px solid #ffffff;
     padding-bottom: 10px;
 }
+
 #education .card-content .row {
     border-bottom: 1px solid #ffffff;
     padding-bottom: 10px;
 }
+
 .card.large .card-image {
     height: 230px;
 }
@@ -445,13 +455,13 @@ small {
 }
 
 .grey-text {
-    color: #f1f0ecb4 !important;
+    color: #f1f0ecb4;
 }
 
 
 
 .black-text {
-    color: #000000 !important;
+    color: #000000
 }
 
 
@@ -543,6 +553,10 @@ small {
         top: 64px;
     }
 
+    h2 {
+        font-family: Montserrat;
+    }
+
     section#intro {
         margin-bottom: -64px;
     }
@@ -556,7 +570,8 @@ small {
 
 @media (min-width: 600px) {
     h2 {
-        font-size: 50px;
+        font-family: Montserrat;
+        font-size: 30px;
         line-height: 200%;
         margin: 30px 0 0;
     }
@@ -566,8 +581,11 @@ small {
     }
 
     .card .card-content .card-title {
-        font-size: 50px;
-        line-height: 70px;
+        font-size: 40px;
+        line-height: 1.4;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
     }
 
     #experience span.card-title {
@@ -600,4 +618,57 @@ small {
     #intro.section {
         background-position-x: 30%;
     }
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+    overflow: hidden;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    margin-right: 20px;
+    transition: margin-right 0.5s ease;
+    overflow: hidden;
+}
+
+.carousel-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    text-align: center;
+}
+
+.carousel-text h2 {
+    color: #f5f5f5;
+    margin: 0;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    z-index: 1;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
 }
