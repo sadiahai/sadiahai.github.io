@@ -1,383 +1,293 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sadia Haidari</title>
 
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <title>Sadia Haidari | Computer Scientistr</title>
+    <meta property="og:url" content="https://scroll-driven-animations.style">
+    <meta property="og:image" content="https://scroll-driven-animations.style/social.jpg">
+
+
+    <link rel="icon" href="images/Sadia_Haidari__1_-removebg-preview.png" sizes="any">
+    <link rel="icon" href="images/Sadia_Haidari__1_-removebg-preview.png" type="image/svg+xml">
+
+    <!-- Polyfill -->
+    <script src="/shared/third_party/polyfill/scroll-timeline.js"></script>
+
+    <!-- Shared styles and scripts, applied to each page -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/scripts.js"></script>
+
+    <!-- Page specific styles. The code for the scroll-driven animations is kept in a local style block for your reading convenience -->
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        @keyframes adjust-image {
+            from {
+                zoom: 1;
+                translate: -50% -100% 0;
+            }
+
+            80% {
+                opacity: 0.10;
+            }
+
+            to {
+                translate: -50% -60% 0;
+                scale: 3.5;
+                opacity: 0.10;
+                rotate: -6deg;
+            }
+        }
+
+        header {
+            view-timeline: --header-vtl;
+        }
+
+        header img {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+
+            animation: adjust-image linear both;
+            animation-timeline: --header-vtl;
+            animation-range: exit;
+            z-index: -1;
+        }
+
+        header h1 {
+            padding-top: min(20rem, 60vw);
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                translate: 0 -50% 0;
+                clip-path: inset(100% 100% 0% 0%);
+            }
+
+            to {
+                opacity: 1;
+                clip-path: inset(0% 0% 0% 0%);
+            }
+        }
+
+        .card {
+            cursor: pointer;
+            animation: appear linear;
+            animation-timeline: view();
+            animation-range: entry 0% entry 80%;
+        }
+    </style>
 </head>
 
-<body>
+<body data-new-gr-c-s-check-loaded="14.1189.0" data-gr-ext-installed="">
+    <header>
+        <img src="images/Untitled design (1).png" alt="" width="400" height="400" style="margin-top: 60px" ;>
+        <br>
+        <br>
+        <br>
+        <h1>Hi, I'm Sadia Haidari</h1>
+        <h2 id="changingText">I am <span id="changingSpan"></span></h2>
 
-  <!-- Side Navigation Implementation -->
-  <!-- Resource: https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp-->
-  <nav class="hide-on-small-only">
-    <ul class="side-nav fixed section table-of-contents">
-
-      <li class="logo">
-        <a id="logo-container" aria-label="Move back to the top of the page." href="#intro" class="brand-logo">
-          <img src="images/Haidari_Sadia_Headshot.PNG" class="profile" alt="profile picture">
-        </a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Move to the Education section" href="#education" class="black-text"><i
-            class="mdi-social-school small"></i><span>Education</span></a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Move to the Experience section" href="#experience" class=" black-text"><i
-            class="mdi-action-trending-up small"></i><span>Experience</span></a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Move ot the Projects section" href="#projects" class=" black-text"><i
-            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Move to the Contact section" href="#contact" class="black-text"><i
-            class="mdi-content-mail small"></i><span>Contact</span></a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Open for the LinkedIn profile in a new tab" href="linkedin.com/in/sadia-haidari-7628b9202"
-          target="_blank" class="black-text"><i
-            class="mdi-file-folder-open small"></i><span>LinkedIn</span></a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Open for the GitHub profile in a new tab" href="https://github.com/sadiahai" target="_blank"
-          class="black-text"><i class="mdi-file-folder-open small"></i><span>GitHub</span></a>
-      </li>
-    </ul>
-  </nav>
-
-  <!-- Following Information from: https://www.w3schools.com/howto/howto_js_sidenav.asp -->
-  <nav class="hide-on-large only trigger z-depth-1">
-    <a aria-label="Change Nav Visibility" href="#" data-activates="slide-out" class="button-collapse"><i
-        class="mdi-navigation-menu"></i></a>
-    <div class="name-title">
-      <a id="name" aria-label="Navigate to the beginning of the page" href="#" class="black-text">Sadia Haidari</a>
-    </div>
-  </nav>
-
-  <!-- Same thing as hide-on-small -->
-  <nav class="hide-on-large only">
-    <ul id="slide-out" class="side-nav">
-      <li class="bold">
-        <a aria-label="Move to the Education section" href="#education" class="black-text"><i
-            class="mdi-social-school small"></i><span>Education</span></a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Move to the Experience section" href="#experience" class="black-text"><i
-            class="mdi-action-trending-up small"></i><span>Experience</span></a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Move ot the Projects section" href="#projects" class="black-text"><i
-            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Move to the Contact section" href="#contact" class=" black-text"><i
-            class="mdi-content-mail small"></i><span>Contact</span></a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Open for the LinkedIn profile in a new tab" href="linkedin.com/in/sadia-haidari-7628b9202"
-          target="_blank" class="black-text"><i
-            class="mdi-file-folder-open small"></i><span>LinkedIn</span></a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Open for the GitHub profile in a new tab" href="https://github.com/sadiahai" target="_blank"
-          class="black-text"><i class="mdi-file-folder-open small"></i><span>GitHub</span></a>
-      </li>
-    </ul>
-  </nav>
-
-  <!-- Content of the website starts here-->
-  <main>
-    <section id="intro" class="section scrollspy full-height">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="col-md-9">
-          <div class="content section-padding valign" style="margin-left: 10%; margin-top: 50px;">
-            <div>
-              <h2>Hi, I'm <span class="orange">Sadia Haidari.</span></h2> <br> <br>
-              <h3 id="changingText">I am <span id="changingSpan"></span></h3>
-
-              <script>
-                const prompts = [
-                  "a computer scientist.",
-                  "a problem-solver.",
-                  "learning AWS.",
-                  "self-driven.",
-                  "data-driven.",
-                  "passionate about people and technology."
-                ];
+        <script>
+            const prompts = [
+                "a computer scientist.",
+                "a problem-solver.",
+                "learning AWS.",
+                "self-driven.",
+                "data-driven.",
+                "passionate about people and technology."
+            ];
 
 
-                function typeWriter(text, i, cb) {
-                  if (i < text.length) {
+            function typeWriter(text, i, cb) {
+                if (i < text.length) {
                     document.getElementById("changingSpan").textContent += text.charAt(i);
                     setTimeout(function () {
-                      typeWriter(text, i + 1, cb);
+                        typeWriter(text, i + 1, cb);
                     }, 60);
-                  } else {
+                } else {
                     setTimeout(cb, 1500);
-                  }
                 }
+            }
 
 
-                function changeText() {
-                  let index = 0;
-                  let typing = false;
-                  setInterval(() => {
+            function changeText() {
+                let index = 0;
+                let typing = false;
+                setInterval(() => {
                     if (!typing) {
-                      typing = true;
-                      const changingSpan = document.getElementById('changingSpan');
-                      changingSpan.textContent = "";
-                      typeWriter(prompts[index], 0, function () {
-                        setTimeout(function () {
-                          eraseText(changingSpan, prompts[index].length, function () {
-                            index = (index + 1) % prompts.length;
-                            typing = false;
-                          });
-                        }, 750);
-                      });
+                        typing = true;
+                        const changingSpan = document.getElementById('changingSpan');
+                        changingSpan.textContent = "";
+                        typeWriter(prompts[index], 0, function () {
+                            setTimeout(function () {
+                                eraseText(changingSpan, prompts[index].length, function () {
+                                    index = (index + 1) % prompts.length;
+                                    typing = false;
+                                });
+                            }, 750);
+                        });
                     }
-                  }, 2000);
-                }
+                }, 2000);
+            }
 
 
-                function eraseText(element, length, cb) {
-                  let text = element.textContent;
-                  let i = length;
-                  let interval = setInterval(function () {
+            function eraseText(element, length, cb) {
+                let text = element.textContent;
+                let i = length;
+                let interval = setInterval(function () {
                     if (i > 0) {
-                      element.textContent = text.substring(0, i - 1);
-                      i--;
+                        element.textContent = text.substring(0, i - 1);
+                        i--;
                     } else {
-                      clearInterval(interval);
-                      cb();
+                        clearInterval(interval);
+                        cb();
                     }
-                  }, 60);
-                }
+                }, 60);
+            }
 
 
-                changeText();
-              </script>
+            changeText();
+        </script>
 
-            </div>
-            <p id="intro-paragraph">I am an undergraduate student at the University of Michigan, majoring in Computer
-              Science and minoring
-              in UX Design. I am a Posse Foundation Leadership Scholar with a passion for human-technology
-              interaction. I am currently exploring cybersecurity and accessibility design. </p>
-            <br> <br> <br>
-          </div>
-        </div>
-    </section>
+    </header>
+    <main>
 
-    <section id="education" class="section scrollspy">
-      <h3 class="page-title white-text orange">Education</h3>
-      <div class="container">
-        <div class="row">
-          <div class=" s12 m6 l6" style="width: 75vw; justify-content: center; align-items: center;">
-            <div class="card">
-              <div class="card-content">
-                <span class="card-title">The University of Michigan</span>
-                <p class="orange-text" style="color: #cd7400">Ann Arbor, MI</p>
-                <p style="font-size: 20px; font-weight:bold">
-                  <i>Expected 2026</i><br>
-                  <strong>Degree: </strong>Bachelor's of Science in Computer Science, minor in UX Design<br>
-                  <strong>GPA: </strong>3.50/4.0
-                </p>
-                <p><strong>Relevant Coursework:</strong></p>
-                <ul>
-                  <li>Data Structures and Algorithms</li>
-                  <li>Web Design and Accessibility</li>
-                  <li>Object-Oriented Programming in C++ and Python</li>
-                  <li>Statistics in R</li>
-                  <li>Introduction to Micro and Macroeconomics in R</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        <h2><a href="#intro" name="intro">#</a> About Me</h2>
+        <p>Hello! I’m a junior at the University of Michigan studying Computer Science and UX Design. I’m extremely
+            interested in the intersection of people and technology. I’ve explored projects in bioinformatics, web
+            accessibility, cybersecurity, and data analytics.</p>
+        <p> Currently, I'm in the Headstarter AI fellowship, where I'm working on developing a Women's Health & Cycle
+            Tracking app with my team. I met the wonderful people that I will be working with through Girls Who Code.
+            Every week in the fellowship, I will be developing new AI-related projects. I will upload them here as I go
+            along.</a>.</p>
+        <p><strong>Curious about my work?</strong> Scroll to see my work, experiences, skills, and more!</b></p>
 
-
-    <section id="experience" class="section scrollspy">
-      <h3 class="page-title white-text orange">Experience</h3>
-      <div class="container">
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-              </div>
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title" style = "background-color: black;">Think Neuro</a></span>
-                </p>
-              </div>
-            </div>
-            <ul>
-              <li>
-                Create a basic wireframe for the frontend interface of the Digital Opioid Intervention Platform for
-                Opioid Addiction recovery and develop the backend functionality of the platform.
-              </li>
-              <li>
-                Test beta designs with local communities and adjust product according to user-generated feedback and any
-                bugs revealed by test cases
-              </li>
-            </ul>
-          </div>
-          <div class="card-action">
-            <span>January 2024 - June 2024 | Remote, USA</span>
-          </div>
+        <div class="cta">
+            <a href="#projects" class="button">Projects</a>
+            <a href="#work" class="button">Work</a>
+            <a href="#education" class="button">Education & Skills</a>
+            <a href="#socials" class="button">Find Me Online</a>
         </div>
 
+        <h2><a href="#projects" name="projects">#</a> Projects</h2>
+        <div class="cards">
+            <div class="card card--demo" id="card-progress-bar" data-css="" data-js="">
+                <h3>Dissecting Ciphers</h3>
+                <img src="images/Ciphers.png" alt="" width="400" height="400">
+                <p>C++ program designed to explore encryption/decryption. Also navigates asymmetric/symmetric
+                    encryption.</p>
+                <a class="button" aria-disabled="true" disabled="">Github Repo</a>
+                <a href="https://eecs183.github.io/p3-ciphers/" class="button">Project Spec</a>
+            </div>
 
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-              </div>
-              <div>
-                <p>
-                  <span class="card-title" style = "background-color: black;">Michigan Eco Data</a></span>
-                </p>
-              </div>
-              <ul>
-                <li>
-                  Utilize Kareo, Python, ArcGIS, C++, Git, and Excel to create a user-friendly method of generating
-                  stats
-                  & data visualizations of client demographic and health assessment data for the Women's Center of
-                  Southeastern Michigan.
-                </li>
-                <li>
-                  Create a Client Coverage map. Analyze pre/post counseling depression (PHQ-9) and anxiety (GAD-7)
-                  scores to quantify therapeutic intervention.
-                </li>
-              </ul>
+            <div class="card card--demo" id="card-horizontal-carousel" data-css="">
+                <h3>Image Filters</h3>
+                <img src="images/crayons.bmp" alt="" width="400" height="400">
+                <p>Python program that applies 7 filters to a user-provided image.</p>
+                <a href="https://github.com/sadiahai/Image_Editor" class="button">Github Repo</a>
+                <a class="button" aria-disabled="true" disabled="">Project Spec</a>
             </div>
-            <div class="card-action">
-              <span>August 2023 - PRESENT | Ann Arbor, MI, USA</span>
-            </div>
-          </div>
 
-          <div class="card">
-            <div class="card-content">
-              <div class="row">
-                <div class="col s12 m2">
-                </div>
-                <div>
-                  <p>
-                    <span class="card-title" style = "background-color: black;">Northwestern University</span>
-                  </p>
-                </div>
-              </div>
-              <ul>
-                <li>
-                  Serve in a youth media consulting role on PrEP4Teens, a citywide social marketing campaign aimed at
-                  increasing HIV prevention awareness among adolescents.
-                </li>
-                <li>
-                  Drafted a campaign brand for the several murals across the
-                  Chicagoland area, the website in both Spanish and English, the discord server, and social media
-                  platforms.
-                </li>
-                <li>
-                  Spoke at a webinar for the Global PrEP Learning Network (funded by PEPFAR and USAID) to over 180
-                  people from Zimbabwe, Uganda, Lesotho, South Africa, and the US about the PrEP4Teens project and the
-                  unique role that youth contributions play in community mobilization surrounding the HIV epidemic.
-                </li>
-              </ul>
+            <div class="card card--demo" id="card-carousel-with-markers" data-css="">
+                <h3>Penguin Data Science</h3>
+                <img src="images/PenguinDataSci.png" alt="" width="400" height="400">
+                <p>Python program that takes in data of over 2000 penguins and sorts them by phenotypes.</p>
+                <a href="https://github.com/sadiahai/Penguin_Data" class="button">Github Repo</a>
+                <a class="button" aria-disabled="true" disabled="">Project Spec</a>
             </div>
-            <div class="card-action">
-              <span>June 2021 - PRESENT | Chicago, IL, USA</span>
+
+            <div class="card card--demo" id="card-reverse-scroll" data-css="" data-js="">
+                <h3>Piazza Post Classifier</h3>
+                <img src="images/Piazza.png" alt="" width="400" height="400">
+                <p>Automatically identify the subject of posts from the EECS 280 Piazza using NLP and ML.</p>
+                <a class="button" aria-disabled="true" disabled="">Github Repo</a>
+                <a href="https://eecs280staff.github.io/p5-ml/" class="button">Project Spec</a>
             </div>
-          </div>
+
+            <div class="card card--demo" id="card-cover-to-fixed-header" data-css="">
+                <h3>Text Editor</h3>
+                <img src="images/TextEditor.png" alt="" width="400" height="400">
+                <p>Implemented the basic features of a text editor that is usable through a terminal-based visual
+                    editor.</p>
+                <a class="button" aria-disabled="true" disabled="">Github Repo</a>
+                <a href="https://eecs280staff.github.io/p4-editor/" class="button">Project Spec</a>
+            </div>
+
+            <div class="card card--demo" id="card-image-reveal" data-css="" data-js="">
+                <h3>Protein Matching</h3>
+                <img src="images/Protein Matching.png" alt="" width="400" height="400">
+                <p>Takes a given protein’s amino acid sequence and determines how closely the protein matches the
+                    markers for different classes of proteins.</p>
+                <a href="https://github.com/sadiahai/Protein_Matching" class="button">Github Repo</a>
+                <a class="button" aria-disabled="true" disabled="">Project Spec</a>
+            </div>
+
 
         </div>
-    </section>
 
-    <section id="projects" class="section scrollspy">
-      <h3 class="page-title white-text orange">Projects</h3>
-      <div class="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item">
-            <img src="images/PenguinDataSci.png" alt="6 different penguin species">
-            <div class="carousel-text">
-              <h2 style = "color: #f5f5f5">Penguin Statistics</h2>
+        <h2><a href="#work" name="work">#</a> Work Experience</h2>
+
+        <div class="cards">
+
+            <div class="card card--tool">
+                <h3>Headstarter AI, <em>Software Engineering Fellow</em></h3>
+                <img src="images/theheadstarter_logo.jpg" alt="" width="400" height="400">
+                <p style="text-align: center;">July 2024-Present</p>
             </div>
-          </div>
-          <div class="carousel-item">
-            <img src="images/crayons.bmp" alt="Crayons stacked on one another">
-            <div class="carousel-text">
-              <h2 style = "color: #f5f5f5">Image Filters</h2>
+
+            <div class="card card--tool">
+                <h3>City of Chicago, <em>Software & Policy Intern</em></h3>
+                <img src="images/COCDeptFinance.jpg" alt="" width="400" height="400">
+                <p style="text-align: center;">May 2024 - Present</p>
             </div>
-          </div>
-          <div class="carousel-item">
-            <img src="images/Ciphers.png" alt="Demonstration of Caesar Cipher Key">
-            <div class="carousel-text">
-              <h2 style = "color: #f5f5f5">Encryption/Decryption Ciphers</h2>
+            <div class="card card--tool">
+                <h3>Michigan Eco Data, <em>Data Analytics Member</em></h3>
+                <img src="images/EcoData.png" alt="" width="400" height="400">
+                <p style="text-align: center;">August 2023 - Present</p>
             </div>
-          </div>
-          <div class="carousel-item">
-            <img src="images/Instagram.jpg" alt="A person using a phone in front of the Instagram logo">
-            <div class="carousel-text">
-              <h2 style = "color: #f5f5f5">Instagram Password Cracker</h2>
+            <div class="card card--tool">
+                <h3>Northwestern University, <em>Marketing & Research Intern</em></h3>
+                <img src="images/Northwestern.jpg" alt="" width="400" height="400">
+                <p style="text-align: center;">June 2021 - July 2024</p>
             </div>
-          </div>
-          <div class="carousel-item">
-            <img src="images/Piazza.png" alt="Piazza logo">
-            <div class="carousel-text">
-              <h2 style = "color: #f5f5f5">Piazza Post Classifier</h2>
+            <div class="card card--tool">
+                <h3>Think Neuro, <em>Software Development Intern</em></h3>
+                <img src="images/ThinkNeuro.png" alt="" width="400" height="400">
+                <p style="text-align: center;">January 2024 - May 2024</p>
             </div>
-          </div>
         </div>
 
+        <h2><a href="#education" name="education">#</a> Education and Skills</h2>
 
-        <button class="carousel-control prev" aria-label="Previous Slide">&lt;</button>
-        <button class="carousel-control next" aria-label="Next Slide">&gt;</button>
-      </div>
-      <script type="text/javascript" src="carousel.js"></script>
-    </section>
-
-
-    <section id="contact" class="section scrollspy full-height">
-      <h3 class="page-title white-text orange">Contact Me</h3>
-      <div class="container">
-        <p style = "color: #f5f5f5; line-height: 1.5;">
-          <strong>Phone Number: </strong> +1 (773)849-8006 <br>
-          <strong>Email Address: </strong> sadiahai@umich.edu <br>
-          <strong>Github: </strong>
-          <a aria-label="Sadia on Github" href="http://github.com/sadiahai" style= "color: #cd7400;"> http://github.com/sadiahai </a>
-          <br>
-          <strong>LinkedIn: </strong>
-          <a aria-label="Sadia on LinkedIn" href="linkedin.com/in/sadia-haidari-7628b9202" style= "color: #cd7400;">
-            linkedin.com/in/sadia-haidari-7628b9202 </a>
-          <br>
         </p>
-      </div>
-    </section>
-  </main>
-  <script src="js/script.js"></script>
-  <script src="js/carousel.js"></script>
-</body>
+        <ul>
+            <li>Pursuing a B.S. in Computer Science with a minor in UX Design at the <strong>University of
+                    Michigan</strong>, Ann Arbor. Expected graduation May 2026.</li>
+            <li><strong>Relevant Coursework:</strong> Data Structures and Algorithms, Calculus II, Statistics in R and Python, Web Design & Development,
+                Data-Driven Applications, Python and Digital Media, Data-Oriented Programming, Discrete Mathematics</li>
+            <li><strong>Awards: </strong> Posse Foundation Full-Tuition Leadership Scholarship (2022-2026), Illinois State Scholar (2022)</li>
+            <li><strong>Programming languages:</strong> C++, Python, R, HTML5, CSS, Javascript</li>
+            <li><strong>Databases:</strong> MySQL</li>
+            <li><strong>Tools:</strong> ArcGIS, Tableau, Figma</li>
+        </ul>
+
+        <h2><a href="#socials" name="socials">#</a> Find Me Online</h2>
+
+        <ul>
+            <li><strong>Linkedin:</strong><a href="https://www.linkedin.com/in/sadia-haidari-7628b9202/"> https://www.linkedin.com/in/sadia-haidari-7628b9202/</a></li>
+            <li><strong>Github:</strong><a href="https://github.com/sadiahai"> https://github.com/sadiahai</a>
+            </li>
+        </ul>
+    </main>
+
+
+   
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
 
 </html>
